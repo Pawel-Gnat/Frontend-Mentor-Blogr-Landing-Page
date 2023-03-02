@@ -1,2 +1,16 @@
+@use 'variables' as *;
+
 .hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 60rem;
+	background: url(../images/bg-pattern-intro-mobile.svg) 35% 35%, linear-gradient($very_light_red, $light_red);
+	clip-path: inset(0 0 0 0 round 0% 0% 0% 100px);
+	text-align: center;
+}
+
+.editor {
+	margin-top: 10rem;
+	text-align: center;
 }

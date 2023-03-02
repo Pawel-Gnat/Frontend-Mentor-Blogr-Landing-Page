@@ -1,15 +1,69 @@
 ---
+import '../styles/index.scss'
+
 import Layout from '../layouts/Layout.astro'
+import { Text, Title } from '../components/Text'
+import Anchor from '../components/Anchor'
+import Picture from '../components/Picture'
+import Image from '../components/Image'
+
+import mobileEditorImage from '../images/illustration-editor-mobile.svg'
+import desktopEditorImage from '../images/illustration-editor-desktop.svg'
+import phonesImage from '../images/illustration-phones.svg'
+import mobileDesktopImage from '../images/illustration-laptop-mobile.svg'
+import desktopDesktopImage from '../images/illustration-laptop-desktop.svg'
 ---
 
 <Layout title='Frontend Mentor Blogr Landing Page'>
 	<main>
 		<section class='hero'>
-			<h1>A modern publishing platform</h1>
-			<p>Grow your audience and build your online brand</p>
+			<h1 class='heading--white'>A modern publishing platform</h1>
+			<Text
+				white={true}
+				text='Grow your audience and build your online brand'
+			/>
 			<div>
-				<a href='./'>Start for Free</a>
-				<a href='./'>Learn More</a>
+				<Anchor
+					type='btn--primary'
+					text='Start for Free'
+				/>
+				<Anchor
+					type='btn--secondary'
+					text='Learn More'
+				/>
+			</div>
+		</section>
+		<section class='editor'>
+			<h2 class='heading--blue'>Designed for the future</h2>
+			<div>
+				<Picture
+					mobile={mobileEditorImage}
+					desktop={desktopEditorImage}
+				/>
+				<div>
+					<Title text='Introducing an extensible editor' />
+					<Text
+						white={false}
+						text='Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, videos and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.'
+					/>
+				</div>
+				<div>
+					<Title text='Robust content management' />
+					<Text
+						white={false}
+						text={`Flexible content management enables users to easily move through posts. Increase the usability of your blog by adding customized categories, sections, format or flow. With this functionality, you're in full control.`}
+					/>
+				</div>
+			</div>
+		</section>
+		<section class='laptop'>
+			<Image source={phonesImage} />
+			<div>
+				<h2 class='heading--white'>State of the Art Infrastructure</h2>
+				<Text
+					white={true}
+					text='With reliability and speed in mind, worldwide data-centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.'
+				/>
 			</div>
 		</section>
 	</main>

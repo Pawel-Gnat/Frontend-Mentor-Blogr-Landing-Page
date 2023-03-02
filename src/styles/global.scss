@@ -1,12 +1,6 @@
+@use 'variables' as *;
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
-
-$light_red_CTA_text: hsl(356, 100%, 66%);
-$very_light_red_CTA_hover_background: hsl(355, 100%, 74%);
-$very_dark_blue_headings: hsl(208, 49%, 24%);
-$white_text: hsl(0, 0%, 100%);
-$grayish_blue_footer_text: hsl(240, 2%, 79%);
-$very_dark_grayish_blue_body_copy: hsl(207, 13%, 34%);
-$very_dark_black_blue_footer_background: hsl(240, 10%, 16%);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -22,4 +16,30 @@ html {
 body {
 	font-family: 'Overpass', sans-serif;
 	font-size: 1.6rem;
+}
+
+a {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	display: inline-block;
+}
+
+h1 {
+	font-size: 3.6rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+section {
+	padding: 0 2.4rem;
+}
+
+.heading--white {
+	color: $white_text;
+}
+
+.heading--blue {
+	color: $very_dark_blue_headings;
 }
