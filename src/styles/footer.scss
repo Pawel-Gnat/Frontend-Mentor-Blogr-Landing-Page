@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.footer {
+	display: grid;
+	padding: 7rem 0;
+	background-color: $very_dark_black_blue_footer_background;
+	clip-path: inset(0 0 0 0 round 0% 100px 0% 0%);
+	text-align: center;
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+}

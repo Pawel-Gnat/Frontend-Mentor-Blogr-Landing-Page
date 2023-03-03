@@ -5,12 +5,35 @@
 	flex-direction: column;
 	justify-content: center;
 	min-height: 60rem;
+	padding: 7.5rem 2.4rem 0;
 	background: url(../images/bg-pattern-intro-mobile.svg) 35% 35%, linear-gradient($very_light_red, $light_red);
 	clip-path: inset(0 0 0 0 round 0% 0% 0% 100px);
-	text-align: center;
 }
 
 .editor {
 	margin-top: 10rem;
-	text-align: center;
+}
+
+.phones {
+	position: relative;
+
+	&__content {
+		padding: 0 2.4rem 5rem;
+	}
+
+	&__background {
+		position: absolute;
+		inset: 0;
+		top: 15rem;
+		min-height: 40rem;
+		background: url(../images/bg-pattern-circles.svg) 50% -20rem no-repeat,
+			linear-gradient($very_dark_gray_blue, $very_dark_desaturated_blue);
+		background-size: cover;
+		clip-path: inset(0 0 0 0 round 0% 100px 0% 100px);
+		z-index: -1;
+	}
+
+	h2 {
+		font-size: 3.6rem;
+	}
 }
