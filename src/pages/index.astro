@@ -17,7 +17,7 @@ import desktopLaptopImage from '../images/illustration-laptop-desktop.svg'
 ---
 
 <Layout title='Frontend Mentor Blogr Landing Page'>
-	<Header client:load />
+	<Header client:only='react' />
 	<main>
 		<section class='hero'>
 			<h1 class='heading--white'>A modern publishing platform</h1>
@@ -36,9 +36,9 @@ import desktopLaptopImage from '../images/illustration-laptop-desktop.svg'
 				/>
 			</div>
 		</section>
-		<section class='editor'>
+		<section class='editor wrapper'>
 			<h2 class='heading--blue padding'>Designed for the future</h2>
-			<div>
+			<div class='editor__container'>
 				<Picture
 					mobile={mobileEditorImage}
 					desktop={desktopEditorImage}
@@ -58,22 +58,24 @@ import desktopLaptopImage from '../images/illustration-laptop-desktop.svg'
 			</div>
 		</section>
 		<section class='phones'>
-			<Image source={phonesImage} />
-			<div class='phones__content'>
-				<h2 class='heading--white'>State of the Art Infrastructure</h2>
-				<Text
-					white={true}
-					text='With reliability and speed in mind, worldwide data-centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.'
-				/>
+			<div class='phones__content wrapper'>
+				<Image source={phonesImage} />
+				<div class='phones__text-content'>
+					<h2 class='heading--white'>State of the Art Infrastructure</h2>
+					<Text
+						white={true}
+						text='With reliability and speed in mind, worldwide data-centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.'
+					/>
+				</div>
 			</div>
 			<div class='phones__background'></div>
 		</section>
-		<section class='laptop'>
+		<section class='laptop wrapper'>
 			<Picture
 				mobile={mobileLaptopImage}
 				desktop={desktopLaptopImage}
 			/>
-			<div class='padding'>
+			<div class='laptop__container padding'>
 				<Title text='Free, open, simple' />
 				<Text
 					white={false}
@@ -87,5 +89,5 @@ import desktopLaptopImage from '../images/illustration-laptop-desktop.svg'
 			</div>
 		</section>
 	</main>
-	<Footer />
+	<Footer client:load />
 </Layout>

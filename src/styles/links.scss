@@ -13,3 +13,13 @@
 	padding-bottom: 1rem;
 	color: $grayish_blue_footer_text;
 }
+
+@media (min-width: 992px) {
+	.nav-heading {
+		padding: 0rem 0 3rem;
+	}
+
+	.link {
+		padding-bottom: 2rem;
+	}
+}

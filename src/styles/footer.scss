@@ -1,14 +1,27 @@
 @use 'variables' as *;
 
 .footer {
-	display: grid;
 	padding: 7rem 0;
+	margin-top: 5rem;
 	background-color: $very_dark_black_blue_footer_background;
 	clip-path: inset(0 0 0 0 round 0% 100px 0% 0%);
 	text-align: center;
 
+	&__content {
+		display: grid;
+		width: 100%;
+	}
+
 	&__column {
 		display: flex;
 		flex-direction: column;
+	}
+}
+
+@media (min-width: 992px) {
+	.footer {
+		&__content {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 }
