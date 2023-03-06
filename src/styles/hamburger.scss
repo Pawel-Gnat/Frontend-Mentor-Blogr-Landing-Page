@@ -1,6 +1,8 @@
 .btn-hamburger {
+	position: relative;
 	margin-left: auto;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	z-index: 1;
 }

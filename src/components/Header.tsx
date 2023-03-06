@@ -2,45 +2,48 @@ import '../styles/header.scss'
 import Logo from './Logo'
 import HamburgerButton from './HamburgerButton'
 import Navbar from './Navbar'
-import Anchor from './Anchor'
 import { useEffect, useState } from 'react'
 
-const getIsDesktop = () => window.innerWidth >= 768
-
 const Header = () => {
+	const getIsDesktop = () => window.innerWidth >= 992
+
 	const [isDesktop, setIsDesktop] = useState(getIsDesktop)
+	const [isNavOpen, setIsNavOpen] = useState(false)
 
 	useEffect(() => {
 		const onResize = () => {
 			setIsDesktop(getIsDesktop())
 		}
+		setIsNavOpen(false)
 
 		window.addEventListener('resize', onResize)
 
 		return () => {
 			window.removeEventListener('resize', onResize)
 		}
-	}, [])
+	}, [isDesktop])
+
+	useEffect(() => {
+		isNavOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
+	}, [isNavOpen])
+
+	function openMobileNavigation() {
+		setIsNavOpen(prev => !prev)
+	}
+
+	// function closeMobileNavigation() {
+	// 	setIsNavOpen(false)
+	// }
 
 	return (
 		<header className='header wrapper'>
 			<Logo />
 			<nav>
-				{isDesktop ? (
-					<>
-						<Navbar />
-						<Anchor
-							type='btn--login'
-							text='Login'
-						/>
-						<Anchor
-							type='btn--signup'
-							text='Sign Up'
-						/>
-					</>
-				) : (
-					<HamburgerButton />
-				)}
+				<Navbar
+					isNavOpen={isNavOpen}
+					// closeMobileNavigation={closeMobileNavigation}
+				/>
+				{!isDesktop && <HamburgerButton onClick={openMobileNavigation} />}
 			</nav>
 		</header>
 	)

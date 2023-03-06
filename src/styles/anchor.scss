@@ -19,14 +19,29 @@
 }
 
 .btn--login {
+	font-family: 'Overpass', sans-serif;
 	background-color: transparent;
 	border: none;
-	color: $white_text;
+	color: black;
 	opacity: 0.7;
 }
 
 .btn--signup {
-	padding: 1.5rem 3.5rem;
-	background-color: white;
-	color: $light_red_CTA_text;
+	font-family: 'Overpass', sans-serif;
+	padding: 1.5rem 4.5rem;
+	background: linear-gradient(to right, $very_light_red, $light_red);
+	color: $white_text;
+}
+
+@media (min-width: 992px) {
+	.btn--login {
+		font-family: 'Ubuntu', sans-serif;
+		color: $white_text;
+	}
+
+	.btn--signup {
+		font-family: 'Ubuntu', sans-serif;
+		background: white;
+		color: $light_red_CTA_text;
+	}
 }

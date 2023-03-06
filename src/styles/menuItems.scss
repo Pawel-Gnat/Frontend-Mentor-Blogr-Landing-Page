@@ -1,6 +1,8 @@
 @use 'variables' as *;
 
 .menu-items {
+	margin-bottom: 3rem;
+
 	button {
 		display: flex;
 		flex-direction: row;
@@ -11,8 +13,36 @@
 	}
 
 	&__text {
-		font-size: 1.6rem;
-		color: $white_text;
+		font-family: 'Overpass', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: black;
 		opacity: 0.7;
+	}
+}
+
+.light-icon {
+	display: none;
+}
+
+.dark-icon {
+	display: block;
+}
+
+@media (min-width: 992px) {
+	.menu-items {
+		margin-bottom: 0;
+
+		&__text {
+			color: $white_text;
+		}
+	}
+
+	.light-icon {
+		display: block;
+	}
+
+	.dark-icon {
+		display: none;
 	}
 }
