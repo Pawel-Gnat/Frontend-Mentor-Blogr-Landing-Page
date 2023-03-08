@@ -1,17 +1,14 @@
 import '../styles/hamburger.scss'
 import iconHamburger from '../images/icon-hamburger.svg'
 import iconClose from '../images/icon-close.svg'
-import { useState } from 'react'
 
 type ButtonProps = {
 	onClick: () => void
+	setIcon: boolean
 }
 
 const HamburgerButton = (props: ButtonProps) => {
-	const [navOpen, setNavOpen] = useState(false)
-
 	function handleMobileNavigation() {
-		setNavOpen(prev => !prev)
 		props.onClick()
 	}
 
@@ -21,8 +18,7 @@ const HamburgerButton = (props: ButtonProps) => {
 			type='button'
 			onClick={handleMobileNavigation}>
 			<img
-				className='btn-hamburger'
-				src={navOpen ? iconClose : iconHamburger}
+				src={props.setIcon ? iconClose : iconHamburger}
 				alt=''
 			/>
 		</button>

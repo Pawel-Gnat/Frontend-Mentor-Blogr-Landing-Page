@@ -27,13 +27,9 @@ const Header = () => {
 		isNavOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'unset')
 	}, [isNavOpen])
 
-	function openMobileNavigation() {
+	function getMobileNavigation() {
 		setIsNavOpen(prev => !prev)
 	}
-
-	// function closeMobileNavigation() {
-	// 	setIsNavOpen(false)
-	// }
 
 	return (
 		<header className='header wrapper'>
@@ -41,9 +37,14 @@ const Header = () => {
 			<nav>
 				<Navbar
 					isNavOpen={isNavOpen}
-					// closeMobileNavigation={closeMobileNavigation}
+					closeNav={getMobileNavigation}
 				/>
-				{!isDesktop && <HamburgerButton onClick={openMobileNavigation} />}
+				{!isDesktop && (
+					<HamburgerButton
+						onClick={getMobileNavigation}
+						setIcon={isNavOpen}
+					/>
+				)}
 			</nav>
 		</header>
 	)

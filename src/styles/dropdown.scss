@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+.dropdown {
+	display: none;
+	position: relative;
+	width: 100%;
+	padding: 3.3rem 2.4rem;
+	margin-top: 2rem;
+	border-radius: 5px;
+	background-color: rgba($grayish_blue_footer_text, 0.3);
+
+	&__items {
+		padding-bottom: 1.5rem;
+	}
+
+	&__items:last-child {
+		padding-bottom: 0rem;
+	}
+
+	&__link {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: rgba(black, 0.5);
+	}
+}
+
+.show {
+	display: block;
+}
+
+@media (min-width: 992px) {
+	.dropdown {
+		position: absolute;
+		top: 4rem;
+		left: -2rem;
+		min-width: 17rem;
+		margin-top: 0;
+		background-color: $white-text;
+		box-shadow: 0px 15px 30px 0px rgba(black, 0.3);
+
+		&__link {
+			font-size: 1.8rem;
+		}
+	}
+}

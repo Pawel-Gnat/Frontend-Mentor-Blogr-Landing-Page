@@ -20,7 +20,7 @@ const Footer = () => {
 									<a
 										key={index}
 										href={submenu.url}
-										className='link'>
+										className='link underline'>
 										{submenu.title}
 									</a>
 								)

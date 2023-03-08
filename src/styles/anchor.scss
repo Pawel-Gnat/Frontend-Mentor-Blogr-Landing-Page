@@ -3,19 +3,33 @@
 .btn {
 	padding: 1.5rem 2rem;
 	margin: 0.5rem;
-	border: 1px solid white;
+	border: 1px solid $white_text;
 	border-radius: 100vw;
+	transition: border-color 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .btn--primary {
-	background-color: white;
+	background-color: $white_text;
 	color: $light_red_CTA_text;
+
+	&:hover {
+		border: 1px solid $very_light_red_CTA_hover_background;
+		background-color: $very_light_red_CTA_hover_background;
+		color: white;
+	}
 }
 
 .btn--secondary {
 	background-color: transparent;
 	color: $white_text;
 	opacity: 0.7;
+
+	&:hover {
+		border: 1px solid $white_text;
+		background-color: $white_text;
+		color: $very_light_red_CTA_hover_background;
+		opacity: 1;
+	}
 }
 
 .btn--login {
@@ -31,6 +45,12 @@
 	padding: 1.5rem 4.5rem;
 	background: linear-gradient(to right, $very_light_red, $light_red);
 	color: $white_text;
+
+	&:hover {
+		border: 1px solid $very_light_red_CTA_hover_background;
+		background-color: $very_light_red_CTA_hover_background;
+		color: $white_text;
+	}
 }
 
 @media (min-width: 992px) {
@@ -41,7 +61,7 @@
 
 	.btn--signup {
 		font-family: 'Ubuntu', sans-serif;
-		background: white;
+		background: $white_text;
 		color: $light_red_CTA_text;
 	}
 }

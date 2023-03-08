@@ -14,6 +14,12 @@
 	color: $grayish_blue_footer_text;
 }
 
+.underline {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 @media (min-width: 992px) {
 	.nav-heading {
 		padding: 0rem 0 3rem;
