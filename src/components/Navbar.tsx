@@ -3,20 +3,16 @@ import MenuItems from './MenuItems'
 import Anchor from './Anchor'
 import '../styles/navbar.scss'
 import { useContext, useEffect, useRef } from 'react'
-import NavContext from '../context/nav-context'
+import { NavContext } from '../context/nav-context'
 
-type NavbarProps = {
-	onClickOutside: () => void
-}
-
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
 	const navbarRef = useRef<HTMLDivElement>(null)
-	const ctx = useContext(NavContext)
+	const ctxNav = useContext(NavContext)
 
 	useEffect(() => {
 		const handler = (e: MouseEvent | TouchEvent) => {
-			if (ctx.isNavOpen && navbarRef.current && !(navbarRef.current as HTMLElement).contains(e.target as Node)) {
-				props.onClickOutside()
+			if (ctxNav.isNavOpen && navbarRef.current && !(navbarRef.current as HTMLElement).contains(e.target as Node)) {
+				ctxNav.setIsNavOpen(prev => !ctxNav.isNavOpen)
 			}
 		}
 
@@ -27,11 +23,11 @@ const Navbar = (props: NavbarProps) => {
 			document.removeEventListener('mousedown', handler)
 			document.removeEventListener('touchstart', handler)
 		}
-	}, [ctx.isNavOpen])
+	}, [ctxNav.isNavOpen])
 
 	return (
 		<div
-			className={`navbar ${ctx.isNavOpen ? ' active' : ''}`}
+			className={`navbar ${ctxNav.isNavOpen ? ' active' : ''}`}
 			ref={navbarRef}>
 			<ul className='navbar__ul-list'>
 				{menuItems.map((menu, index) => {

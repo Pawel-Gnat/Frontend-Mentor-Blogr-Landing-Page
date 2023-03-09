@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const NavContext = React.createContext({
+type NavContextProps = {
+	isNavOpen: boolean
+	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+type NavContextProviderProps = {
+	children: React.ReactNode
+}
+
+export const NavContext = React.createContext<NavContextProps>({
 	isNavOpen: false,
+	setIsNavOpen: () => {},
 })
 
-export default NavContext
+const NavContextProvider: React.FC<NavContextProviderProps> = ({ children }) => {
+	const [isNavOpen, setIsNavOpen] = useState<boolean>(false)
+
+	return <NavContext.Provider value={{ isNavOpen, setIsNavOpen }}>{children}</NavContext.Provider>
+}
+
+export default NavContextProvider

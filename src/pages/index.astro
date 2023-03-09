@@ -7,7 +7,7 @@ import Anchor from '../components/Anchor'
 import Picture from '../components/Picture'
 import Image from '../components/Image'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import HeaderContext from '../components/HeaderContext'
 
 import mobileEditorImage from '../images/illustration-editor-mobile.svg'
 import desktopEditorImage from '../images/illustration-editor-desktop.svg'
@@ -17,7 +17,7 @@ import desktopLaptopImage from '../images/illustration-laptop-desktop.svg'
 ---
 
 <Layout title='Frontend Mentor Blogr Landing Page'>
-	<Header client:only />
+	<HeaderContext client:only />
 	<main>
 		<section class='hero'>
 			<h1 class='heading--white'>A modern publishing platform</h1>

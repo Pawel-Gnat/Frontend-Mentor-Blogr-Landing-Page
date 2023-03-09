@@ -5,4 +5,8 @@
 	background-color: transparent;
 	cursor: pointer;
 	z-index: 1;
+
+	img {
+		pointer-events: none;
+	}
 }

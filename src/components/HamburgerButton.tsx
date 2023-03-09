@@ -2,17 +2,13 @@ import '../styles/hamburger.scss'
 import iconHamburger from '../images/icon-hamburger.svg'
 import iconClose from '../images/icon-close.svg'
 import { useContext } from 'react'
-import NavContext from '../context/nav-context'
+import { NavContext } from '../context/nav-context'
 
-type ButtonProps = {
-	onClick: () => void
-}
-
-const HamburgerButton = (props: ButtonProps) => {
-	const ctx = useContext(NavContext)
+const HamburgerButton = () => {
+	const ctxNav = useContext(NavContext)
 
 	function handleMobileNavigation() {
-		props.onClick()
+		ctxNav.setIsNavOpen(prev => !ctxNav.isNavOpen)
 	}
 
 	return (
@@ -21,7 +17,7 @@ const HamburgerButton = (props: ButtonProps) => {
 			type='button'
 			onClick={handleMobileNavigation}>
 			<img
-				src={ctx.isNavOpen ? iconClose : iconHamburger}
+				src={ctxNav.isNavOpen ? iconClose : iconHamburger}
 				alt=''
 			/>
 		</button>
