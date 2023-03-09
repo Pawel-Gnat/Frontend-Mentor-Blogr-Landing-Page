@@ -3,6 +3,7 @@ import Logo from './Logo'
 import HamburgerButton from './HamburgerButton'
 import Navbar from './Navbar'
 import { useEffect, useState } from 'react'
+import NavContext from '../context/nav-context'
 
 const Header = () => {
 	const getIsDesktop = () => window.innerWidth >= 992
@@ -35,16 +36,10 @@ const Header = () => {
 		<header className='header wrapper'>
 			<Logo />
 			<nav>
-				<Navbar
-					isNavOpen={isNavOpen}
-					closeNav={getMobileNavigation}
-				/>
-				{!isDesktop && (
-					<HamburgerButton
-						onClick={getMobileNavigation}
-						setIcon={isNavOpen}
-					/>
-				)}
+				<NavContext.Provider value={{ isNavOpen: isNavOpen }}>
+					<Navbar onClickOutside={getMobileNavigation} />
+					{!isDesktop && <HamburgerButton onClick={getMobileNavigation} />}
+				</NavContext.Provider>
 			</nav>
 		</header>
 	)
