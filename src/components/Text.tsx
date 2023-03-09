@@ -10,9 +10,21 @@ type Title = {
 }
 
 export const Text = (props: Text) => {
-	return <p className={`text ${props.white ? 'text--white' : 'text--blue'}`}>{props.text}</p>
+	return (
+		<p
+			data-aos='fade-up'
+			className={`text ${props.white ? 'text--white' : 'text--blue'}`}>
+			{props.text}
+		</p>
+	)
 }
 
 export const Title = (props: Title) => {
-	return <strong className='strong'>{props.text}</strong>
+	return (
+		<strong
+			data-aos='fade-up'
+			className='strong'>
+			{props.text}
+		</strong>
+	)
 }

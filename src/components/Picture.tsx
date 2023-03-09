@@ -7,7 +7,9 @@ type Props = {
 
 const Picture = (props: Props) => {
 	return (
-		<picture className='picture'>
+		<picture
+			className='picture'
+			data-aos='zoom-in'>
 			<source
 				srcSet={props.mobile}
 				media='(max-width: 849px)'

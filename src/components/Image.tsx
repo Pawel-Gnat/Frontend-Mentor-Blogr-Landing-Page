@@ -11,6 +11,7 @@ const Image = (props: Props) => {
 			src={props.source}
 			alt=''
 			aria-hidden='true'
+			data-aos='zoom-in'
 		/>
 	)
 }
