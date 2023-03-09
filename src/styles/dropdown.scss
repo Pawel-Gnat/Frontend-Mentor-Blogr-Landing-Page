@@ -21,6 +21,11 @@
 		font-size: 1.6rem;
 		font-weight: bold;
 		color: rgba(black, 0.5);
+		transition: color 0.3s;
+
+		&:hover {
+			color: black;
+		}
 	}
 }
 
