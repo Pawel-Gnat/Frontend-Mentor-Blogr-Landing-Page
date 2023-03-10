@@ -52,7 +52,7 @@ const MenuItems = (props: Props) => {
 			<button
 				type='button'
 				aria-expanded={dropdown ? true : false}
-				className={`${dropdown ? 'rotate' : null}`}
+				className={`${dropdown ? 'rotate' : ''}`}
 				onClick={expandLink}>
 				<p className='menu-items__text underline'>{props.items.title}</p>
 				<img
