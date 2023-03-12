@@ -18,7 +18,9 @@ const MenuItems = (props: Props) => {
 	useEffect(() => {
 		const handler = (e: MouseEvent | TouchEvent) => {
 			if (dropdown && menuItemRef.current && !(menuItemRef.current as HTMLElement).contains(e.target as Node)) {
-				setDropdown(false)
+				setTimeout(() => {
+					setDropdown(false)
+				}, 100)
 			}
 		}
 
@@ -32,11 +34,11 @@ const MenuItems = (props: Props) => {
 	}, [dropdown])
 
 	const onMouseEnter = () => {
-		window.innerWidth > 960 && setDropdown(true)
+		window.innerWidth > 992 && setDropdown(true)
 	}
 
 	const onMouseLeave = () => {
-		window.innerWidth > 960 && setDropdown(false)
+		window.innerWidth > 992 && setDropdown(false)
 	}
 
 	function expandLink() {

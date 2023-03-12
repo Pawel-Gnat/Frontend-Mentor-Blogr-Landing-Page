@@ -1,9 +1,9 @@
-import { menuItems } from '../menuItems'
 import MenuItems from './MenuItems'
 import Anchor from './Anchor'
 import '../styles/navbar.scss'
 import { useContext, useEffect, useRef } from 'react'
 import { NavContext } from '../context/nav-context'
+import { routes } from '../routes'
 
 const Navbar = () => {
 	const navbarRef = useRef<HTMLDivElement>(null)
@@ -11,7 +11,12 @@ const Navbar = () => {
 
 	useEffect(() => {
 		const handler = (e: MouseEvent | TouchEvent) => {
-			if (ctxNav.isNavOpen && navbarRef.current && !(navbarRef.current as HTMLElement).contains(e.target as Node)) {
+			if (
+				ctxNav.isNavOpen &&
+				navbarRef.current &&
+				!(e.target as HTMLElement).matches('button') &&
+				!(navbarRef.current as HTMLElement).contains(e.target as Node)
+			) {
 				ctxNav.setIsNavOpen(prev => !ctxNav.isNavOpen)
 			}
 		}
@@ -30,10 +35,10 @@ const Navbar = () => {
 			className={`navbar ${ctxNav.isNavOpen ? ' active' : ''}`}
 			ref={navbarRef}>
 			<ul className='navbar__ul-list'>
-				{menuItems.map((menu, index) => {
+				{routes.map((route, index) => {
 					return (
 						<MenuItems
-							items={menu}
+							items={route}
 							key={index}
 						/>
 					)

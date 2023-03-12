@@ -1,7 +1,7 @@
 import '../styles/footer.scss'
 import '../styles/links.scss'
 import Logo from './Logo'
-import { menuItems } from '../menuItems'
+import { routes } from '../routes'
 
 const Footer = () => {
 	return (
@@ -9,7 +9,7 @@ const Footer = () => {
 			<div className='footer__content wrapper'>
 				<Logo />
 
-				{menuItems.map((menu, index) => {
+				{routes.map((menu, index) => {
 					return (
 						<div
 							className='footer__column'

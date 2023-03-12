@@ -1,4 +1,4 @@
-export const menuItems = [
+export const routes = [
 	{
 		title: 'Product',
 		submenu: [
