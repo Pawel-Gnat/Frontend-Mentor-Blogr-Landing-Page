@@ -8,7 +8,7 @@ const HamburgerButton = () => {
 	const ctxNav = useContext(NavContext)
 
 	function handleMobileNavigation() {
-		ctxNav.setIsNavOpen(prev => !ctxNav.isNavOpen)
+		ctxNav.setIsNavOpen(prev => !prev)
 	}
 
 	return (
